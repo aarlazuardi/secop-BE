@@ -5,7 +5,7 @@ from flask import Blueprint, request, jsonify, current_app
 import os
 import pandas as pd
 import json
-from backend.app.services.validator import validate_years_consecutive, validate_user_counts, validate_csv_columns
+from app.services.validator import validate_years_consecutive, validate_user_counts, validate_csv_columns
 from backend.config.constants import SAMPLE_DATA_PATH
 import logging
 

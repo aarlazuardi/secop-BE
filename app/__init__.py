@@ -40,6 +40,10 @@ def create_app() -> Flask:
         allow_headers=["Content-Type"]
     )
 
+    @app.route("/")
+    def index():
+        return "Shopee Growth Prediction API is running!"
+
     # Register blueprints from routes
     from .routes.data import bp as data_bp
     from .routes.predict import bp as predict_bp

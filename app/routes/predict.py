@@ -2,14 +2,14 @@
 Prediction endpoint for Shopee Growth Prediction Backend
 """
 from flask import Blueprint, request, jsonify
-from backend.app.services.interpolation import (
+from app.services.interpolation import (
     linear_interpolation, 
     polynomial_interpolation, 
     spline_interpolation,
     lagrange_interpolation
 )
-from backend.app.services.validator import validate_years_consecutive, validate_user_counts
-from backend.config.constants import ALLOWED_METHODS
+from app.services.validator import validate_years_consecutive, validate_user_counts
+from config.constants import ALLOWED_METHODS
 import logging
 
 bp = Blueprint('predict', __name__)

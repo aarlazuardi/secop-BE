@@ -6,7 +6,7 @@ import os
 import pandas as pd
 import json
 from app.services.validator import validate_years_consecutive, validate_user_counts, validate_csv_columns
-from backend.config.constants import SAMPLE_DATA_PATH
+from config.constants import SAMPLE_DATA_PATH
 import logging
 
 bp = Blueprint('data', __name__)

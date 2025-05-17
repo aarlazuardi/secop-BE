@@ -9,6 +9,16 @@ from scipy.interpolate import interp1d, CubicSpline, BarycentricInterpolator
 
 bp = Blueprint('calculator', __name__)
 
+@bp.route('/', methods=['GET'])
+def check_calculator():
+    """Simple GET endpoint to check if calculator route is registered properly."""
+    return jsonify({
+        "status": "Calculator endpoint is working",
+        "info": "This is a POST endpoint. Please send a POST request with the required JSON body.",
+        "required_fields": ["method", "x", "y", "xToPredict"],
+        "supported_methods": ["linear", "polynomial", "spline", "lagrange"]
+    })
+
 @bp.route('/', methods=['POST'])
 def calculate():
     """
